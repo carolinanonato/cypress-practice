@@ -12,6 +12,13 @@ describe('Basic game functionality', () => {
 
   it('should allow matching pairs to remain face-up', () => {
 
+  //visit the game page
+  //click on a card
+  //click on a second card; this card must match the first card
+  //assert that the first card has the is-matched class
+  //assert that the second card has the is-matched class
+  
+  
   });
 
   it('should flip non-matching pairs face-down', () => {
@@ -21,7 +28,13 @@ describe('Basic game functionality', () => {
 
 describe('Countdown functionality', () => {
   it('should start the countdown when the user selects the first card', () => {
-
+      //visit the page
+      cy.visit('http://10.6.1.135:8080/');
+      // click on the first card 
+      cy.get('.card').first().click();
+      // select the .timer Element 
+      //assert that the timer element has specific text content
+      cy.get('.timer').should('have.text', '3');
   });
 
   it('should flip the cards face-down when the countdown runs out', () => {
