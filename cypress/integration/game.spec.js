@@ -1,7 +1,7 @@
 describe('Basic game functionality', () => {
   it('should allow the player to select a single card', () => {
     // First we visit the page.
-    cy.visit('http://10.6.1.135:8080/');
+    cy.visit('http://192.168.0.15:8080/');
     //then we click on a card.
     cy.get('.card').first().click();
 
@@ -29,7 +29,7 @@ describe('Basic game functionality', () => {
 describe('Countdown functionality', () => {
   it('should start the countdown when the user selects the first card', () => {
       //visit the page
-      cy.visit('http://10.6.1.135:8080/');
+      cy.visit('http://192.168.0.15:8080/');
       // click on the first card 
       cy.get('.card').first().click();
       // select the .timer Element 
@@ -38,7 +38,15 @@ describe('Countdown functionality', () => {
   });
 
   it('should flip the cards face-down when the countdown runs out', () => {
-
+     //visit the page
+     cy.visit('http://192.168.0.15:8080/');
+     // click on the first card 
+     cy.get('.card').first().click();
+    
+    //wait until the countdown runs out
+    cy.wait(3000)
+    //make an assertion about the content of the timer
+    cy.get('.timer').should('have.text', '?')
   });
 
   it('should reset the countdown when it runs out', () => {
