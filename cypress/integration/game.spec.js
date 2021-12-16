@@ -1,5 +1,12 @@
 describe('Basic game functionality', () => {
   it('should allow the player to select a single card', () => {
+    // First we visit the page.
+    cy.visit('http://10.6.1.135:8080/');
+    //then we click on a card.
+    cy.get('.card').first().click();
+
+    //make a claim about how the card has changed
+    cy.get('.card').first().should('have.class', 'is-selected')
 
   });
 
