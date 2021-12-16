@@ -38,19 +38,19 @@ describe('Countdown functionality', () => {
   });
 
   it('should flip the cards face-down when the countdown runs out', () => {
-     //visit the page
-     cy.visit('http://192.168.0.15:8080/');
-     // click on the first card 
-     cy.get('.card').first().click();
     
-    //wait until the countdown runs out
-    cy.wait(3000)
-    //make an assertion about the content of the timer
-    cy.get('.timer').should('have.text', '?')
   });
 
   it('should reset the countdown when it runs out', () => {
+ //visit the page
+ cy.visit('http://192.168.0.15:8080/');
+ // click on the first card 
+ cy.get('.card').first().click();
 
+//wait until the countdown runs out
+cy.wait(3000)
+//make an assertion about the content of the timer
+cy.get('.timer').should('have.text', '?')
   });
 
   it('should reset the countdown when the user selects a second card', () => {
